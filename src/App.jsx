@@ -11,7 +11,7 @@ function App() {
 
   const fetchMessages = async () => {
     const res = await axios.get(
-      `http://localhost:5000/messages?user1=${currentUser}&user2=${chattingWith}`
+      `https://chat-app-server-9jdh.onrender.com/messages?user1=${currentUser}&user2=${chattingWith}`
     );
 
     setMessages(res.data);
@@ -20,7 +20,7 @@ function App() {
   const sendMessage = async () => {
     if (!message.trim()) return;
 
-    await axios.post("http://localhost:5000/messages", {
+    await axios.post("https://chat-app-server-9jdh.onrender.com/messages", {
       sender: currentUser,
       receiver: chattingWith,
       text: message
